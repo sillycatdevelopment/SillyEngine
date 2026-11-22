@@ -1,0 +1,13 @@
+build/
+.cache/
+.DS_Store
+*.user
+.idea/
+cmake-build-*/
+compile_commands.json
+
+# FF7 disc images or extracted game files: never committed or shared
+assets/ff7/
+*.bin
+*.cue
+*.iso

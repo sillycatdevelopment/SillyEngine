@@ -1,0 +1,15 @@
+{
+    // VS Code offers to install these when you open the folder.
+    "recommendations": [
+        "llvm-vs-code-extensions.vscode-clangd",   // code completion, errors, go-to-definition
+        "ms-vscode.cmake-tools",                   // configure/build with CMakePresets.json
+        "vadimcn.vscode-lldb",                     // CodeLLDB: debugger
+        "matepek.vscode-catch2-test-adapter",      // C++ TestMate: GoogleTest in the Testing panel
+        "usernamehw.errorlens",                    // errors inline, at the end of the line
+        "catppuccin.catppuccin-vsc",               // colour theme
+        "catppuccin.catppuccin-vsc-icons"          // file icons
+    ],
+    "unwantedRecommendations": [
+        "ms-vscode.cpptools"                       // doesn't understand modules; conflicts with clangd
+    ]
+}

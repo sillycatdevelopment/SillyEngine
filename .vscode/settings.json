@@ -1,0 +1,86 @@
+{
+    // =========================================================================
+    //  Look & feel (same as Aerith Chess)
+    // =========================================================================
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "catppuccin.accentColor": "pink",
+
+    "editor.fontFamily": "'Google Sans Code', Menlo, monospace",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.6,
+    "editor.fontLigatures": true,
+    "editor.inlayHints.fontFamily": "'Google Sans Flex'",
+    "editor.codeLensFontFamily": "'Google Sans Flex'",
+    "markdown.preview.fontFamily": "'Google Sans Flex', -apple-system, sans-serif",
+    "terminal.integrated.fontFamily": "'Google Sans Code', Menlo, monospace",
+    "terminal.integrated.fontSize": 13,
+    "debug.console.fontFamily": "'Google Sans Code', Menlo, monospace",
+    "scm.inputFontFamily": "'Google Sans Flex'",
+    "errorLens.fontFamily": "'Google Sans Flex'",
+    "errorLens.fontStyleItalic": true,
+
+    "editor.cursorBlinking": "smooth",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.stickyScroll.enabled": true,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [110],
+    "editor.inlayHints.enabled": "onUnlessPressed",
+    "editor.padding.top": 8,
+    "workbench.tree.indent": 14,
+    "workbench.tree.renderIndentGuides": "always",
+    "workbench.startupEditor": "none",
+
+    // =========================================================================
+    //  C++: clangd from Homebrew LLVM (the same compiler that builds the
+    //  project). It reads build/debug/compile_commands.json, so it understands
+    //  modules and `import std;`. After adding an `import`, build once.
+    // =========================================================================
+    "clangd.path": "/opt/homebrew/opt/llvm/bin/clangd",
+    "clangd.arguments": [
+        "--compile-commands-dir=${workspaceFolder}/build/debug",
+        "--background-index",
+        "--clang-tidy",
+        "--header-insertion=never",
+        "--completion-style=detailed"
+    ],
+    // Microsoft's C++ IntelliSense doesn't understand modules and fights clangd.
+    "C_Cpp.intelliSenseEngine": "disabled",
+
+    "files.associations": { "*.cppm": "cpp" },
+    "files.exclude": { ".cache": true },
+    "search.exclude": { "build/**": true, ".cache/**": true },
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+
+    // =========================================================================
+    //  CMake Tools: uses CMakePresets.json. The status bar lets you pick the
+    //  preset (debug/release) and which program ▶ runs.
+    // =========================================================================
+    "cmake.useCMakePresets": "always",
+    "cmake.cmakePath": "/opt/homebrew/bin/cmake",
+    "cmake.configureOnOpen": true,
+    "cmake.ctest.testExplorerIntegrationEnabled": false,  // C++ TestMate shows the tests instead
+
+    // =========================================================================
+    //  Tests: C++ TestMate (Testing panel + ▶ next to every TEST)
+    // =========================================================================
+    "testMate.cpp.test.advancedExecutables": [
+        {
+            "name": "SillyEngine tests",
+            "pattern": "build/debug/tests",
+            "cwd": "${workspaceFolder}",
+            "runTask": { "before": ["Build"] }
+        }
+    ],
+    "testMate.cpp.log.logpanel": false,
+    "testing.gutterEnabled": true,
+    "testing.openTesting": "openOnTestFailure",
+    "testing.followRunningTest": true,
+    "testing.automaticallyOpenTestResults": "openOnTestFailure"
+}

@@ -1,0 +1,38 @@
+{
+    // Terminal → Run Task…   (⌘⇧B runs "Build")
+    "version": "2.0.0",
+    "options": { "cwd": "${workspaceFolder}" },
+    "tasks": [
+        {
+            "label": "Build",
+            "type": "shell",
+            "command": "/opt/homebrew/bin/cmake --build --preset debug",
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": "$gcc",
+            "presentation": { "reveal": "silent", "revealProblems": "onProblem", "clear": true }
+        },
+        {
+            "label": "Build (release)",
+            "type": "shell",
+            "command": "/opt/homebrew/bin/cmake --build --preset release",
+            "group": "build",
+            "problemMatcher": "$gcc",
+            "presentation": { "reveal": "silent", "revealProblems": "onProblem", "clear": true }
+        },
+        {
+            "label": "Test: all",
+            "type": "shell",
+            "command": "/opt/homebrew/bin/ctest --preset debug",
+            "dependsOn": "Build",
+            "group": { "kind": "test", "isDefault": true },
+            "problemMatcher": [],
+            "presentation": { "clear": true }
+        },
+        {
+            "label": "Configure (fresh)",
+            "type": "shell",
+            "command": "/opt/homebrew/bin/cmake --preset debug --fresh",
+            "problemMatcher": []
+        }
+    ]
+}
