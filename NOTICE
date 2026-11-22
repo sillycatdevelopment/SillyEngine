@@ -1,0 +1,33 @@
+Silly Engine
+Copyright (c) 2026 SillyCatDevelopment.
+Created by Murder.
+
+Silly Engine is free software: you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version. See the LICENSE file for the full text.
+
+ADDITIONAL TERMS (GNU GPL version 3, Section 7)
+
+The following additional terms apply to Silly Engine and to any work based on
+it, as permitted by Section 7 of the GNU GPL version 3.
+
+1. Attribution (Section 7(b)).
+   Any work that contains or is based on Silly Engine, in whole or in part,
+   must show this credit in a place where users will reasonably see it:
+
+       Based on Silly Engine by SillyCatDevelopment
+
+   For example: in the project's README or main documentation, and in the
+   program's "about", "credits" or startup information if it has one. Where
+   possible, include a link to the original Silly Engine repository.
+
+2. Names (Sections 7(c) and 7(e)).
+   This license does not grant permission to use the names "Silly Engine",
+   "SillyEngine" or "SillyCatDevelopment" as the name of any other project or
+   product. Modified versions must use a different name and must not be
+   presented as the official Silly Engine or as made by SillyCatDevelopment.
+   Using these names only to give the credit required in term 1 is allowed.
+
+This NOTICE file must be kept, unchanged, in all copies and modified versions
+of Silly Engine.

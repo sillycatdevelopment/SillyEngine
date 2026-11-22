@@ -9,7 +9,6 @@ Needs CMake 4.5+, Ninja and Homebrew's LLVM: `brew install cmake ninja llvm`.
 ```sh
 cmake --preset debug          # or release
 cmake --build --preset debug
-ctest --preset debug
 ```
 
 In VS Code: accept the recommended extensions, pick the **debug** preset,
@@ -28,17 +27,25 @@ src/
     src/               *.cpp:  sources, module implementation units
   uci/                 a part with main.cpp directly inside -> a program
     main.cpp           built as build/<preset>/uci
-tests/                 *.cpp anywhere: GoogleTest tests -> build/<preset>/tests
 ```
 
 - A part **with `main.cpp` directly inside** becomes a program, named after
   its folder. Any other part becomes a library.
-- Programs and tests link every library, so they can `import` any module.
+- Programs link every library, so they can `import` any module.
 - Subfolders are fine anywhere (`modules/board/`, `src/search/`...).
 - Empty parts are skipped until they get their first file.
-- Test files only need `TEST(...)` blocks: GoogleTest provides `main()`.
 - If one library needs another, add a line to `CMakeLists.txt` after
   `sillyengine_add_parts(...)`, e.g. `target_link_libraries(engine PUBLIC tools)`.
 
 Run or debug a program from VS Code with F5 ("Run program"): it starts the
 program selected as CMake Tools' launch target in the status bar.
+
+## License
+
+Silly Engine is licensed under the [GNU GPL v3](LICENSE) or later, with two
+additional terms in [NOTICE](NOTICE):
+
+- Projects that use or are based on this code must show a visible credit:
+  **"Based on Silly Engine by SillyCatDevelopment"**.
+- Forks must use their own name: the names "Silly Engine", "SillyEngine" and
+  "SillyCatDevelopment" can't be used to name other projects.
