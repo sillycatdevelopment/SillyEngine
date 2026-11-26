@@ -13,15 +13,15 @@ int main()
   using namespace sillyengine;
 
   Board board;
-  std::uint64_t bb = 0;
-  board.setBit(bb, e8);
-  board.setBit(bb, a1);
-  board.printBitboard(bb);
+  board.clear();
+  board.putPiece(bRook, a8);
+  board.putPiece(bRook, h8);
 
-  std::print("\n");
-  board.clearBit(bb, e8);
-  board.clearBit(bb, a1);
-  board.printBitboard(bb);
+  board.printBitboard(board.pieces(bRook));   // 1s on a8 and h8
+
+  board.removePiece(a8);
+  board.printBoard();                         // a8 is now "."
+  board.printBitboard(board.pieces(bRook));   // only h8
 
   return 0;
 }

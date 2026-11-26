@@ -14,7 +14,8 @@ export namespace sillyengine
   enum Color : std::uint8_t
   {
     Black = 1,
-    White = 0  };
+    White = 0
+  };
 
   enum PieceType : std::uint8_t
   {
@@ -55,6 +56,14 @@ export namespace sillyengine
     a7, b7, c7, d7, e7, f7, g7, h7,
     a8, b8, c8, d8, e8, f8, g8, h8,
     nosquare
+  };
+
+  enum CastlingRights : std::uint8_t
+  {
+    wKingsideCastle = 0b0001,
+    wQueensideCastle = 0b0010,
+    bKingsideCastle = 0b0100,
+    bQueensideCastle = 0b1000
   };
 
   constexpr Piece makePiece(PieceType pieceType, Color color)

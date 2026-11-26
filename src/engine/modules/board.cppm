@@ -16,17 +16,38 @@ export namespace sillyengine
   class Board
   {
   public:
-    void setBit(std::uint64_t& bitboard, Square square);
-    void clearBit(std::uint64_t& bitboard, Square square);
-    bool testBit(std::uint64_t& bitboard, Square square);
-    void printBitboard(std::uint64_t& bitboard);
+    // Constructor
+    Board() = default;
 
-    void updateMailbox();
+    // Board functions
+    void clear();
+    void putPiece(Piece piece, Square square);
+    void removePiece(Square square);
+
+    // Print Functions
+    void printBoard();
+    void printBitboard(std::uint64_t bitboard);
     void printMailbox();
 
-  private:
-    std::array<std::uint64_t, 16> bitboards{};
-    std::array<Piece, 64> mailbox{};
+    std::uint64_t pieces(Piece piece) const { return m_bitboards[piece]; }
 
+  private:
+    std::array<std::uint64_t, 16> m_bitboards{};
+    std::array<Piece, 64> m_mailbox{};
+
+    // Position data
+    Color m_sideToMove = Color::White;
+    std::uint8_t m_castlingRights = 0b1111;
+    Square m_enPassantSquare = Square::nosquare;
+    int m_halfmoveClock = 0;
+    int m_fullmoveClock = 1;
+
+    // Bitboard functions
+    void setBit(std::uint64_t& bitboard, Square square);
+    void clearBit(std::uint64_t& bitboard, Square square);
+    bool testBit(std::uint64_t bitboard, Square square);
+
+    // Mailbox functions
+    void updateMailbox();
   };
 }
