@@ -13,3 +13,7 @@ assets/ff7/
 *.iso
 
 keybinds.md
+
+# Local-only notes and offline docs (never uploaded)
+docs/
+_to_delete/

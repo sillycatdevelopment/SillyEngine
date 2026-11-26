@@ -35,10 +35,10 @@ export namespace sillyengine
     std::array<std::uint64_t, 16> m_bitboards{};
     std::array<Piece, 64> m_mailbox{};
 
-    // Position data
+    // State data
     Color m_sideToMove = Color::White;
     std::uint8_t m_castlingRights = 0b1111;
-    Square m_enPassantSquare = Square::nosquare;
+    Square m_enPassant = Square::nosquare;
     int m_halfmoveClock = 0;
     int m_fullmoveClock = 1;
 

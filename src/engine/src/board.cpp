@@ -35,7 +35,7 @@ namespace sillyengine
 
     m_sideToMove = Color::White;
     m_castlingRights = 0;
-    m_enPassantSquare = Square::nosquare;
+    m_enPassant = Square::nosquare;
     m_halfmoveClock = 0;
     m_fullmoveClock = 1;
   }
